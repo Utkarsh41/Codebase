@@ -1,5 +1,8 @@
 class Solution {
+
 public:
+        Solution() { ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr); }
+
     int kthGrammar(int n, int k) {
         
         if (n == 1 && k == 1)
