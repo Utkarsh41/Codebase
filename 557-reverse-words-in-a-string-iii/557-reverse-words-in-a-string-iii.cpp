@@ -1,5 +1,7 @@
 class Solution {
 public:
+    Solution() { ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr); }
+
     string reverseWords(string s) {
     
         int i = 0;
