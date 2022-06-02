@@ -1,5 +1,7 @@
 class Solution {
 public:
+    Solution() { ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr); }
+
     vector<vector<int>> transpose(vector<vector<int>>& A) {
 	vector<vector<int>> vRes(A[0].size(), vector<int>(A.size(), 0));
 	for (int i = 0; i < A.size(); i++) {
