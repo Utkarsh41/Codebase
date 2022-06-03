@@ -2,35 +2,32 @@ class Solution {
 public:
     Solution() { ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr); }
 
-    void ut( vector<string>&v,string &out,int Copen,int Cclose,int Ropn ,int Rclos ){
-        
-        if(Ropn==0 && Rclos==0){
-            v.push_back(out);
+    vector<string>res;
+    
+    void ut(string s,int o,int c){
+        if(o==0 && c==0){
+            res.push_back(s);
             return;
         }
-        if(Ropn>0){
-            out.push_back('(');
-            ut(v,out,Copen+1,Cclose,Ropn-1 ,Rclos);
-            out.pop_back();
-        }
-         if(Rclos>0 && Copen > Cclose){
+        if(o>0){
+            s+="(";
+            ut(s,o-1,c);
+            s.pop_back();
             
-            out.push_back(')');
-            ut(v,out,Copen,Cclose+1,Ropn ,Rclos-1);
-            out.pop_back();
-
         }
-        
+        if(c>0 && c>o){
+            
+            s+=")";
+            ut(s,o,c-1);
+            s.pop_back();
+            
+        }
     }
     vector<string> generateParenthesis(int n) {
         
-        vector<string>v;
+        string s="";
         
-        string out="(";
-        int Copen=1,Cclose=0,Ropn=n-1,Rclos=n;
-        
-        ut(v,out,Copen,Cclose,Ropn ,Rclos);
-        return v;
-        
+        ut(s,n,n);
+        return res;
     }
 };
