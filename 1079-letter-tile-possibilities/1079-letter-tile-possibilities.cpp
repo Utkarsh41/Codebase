@@ -1,5 +1,7 @@
 class Solution {
 public:
+    Solution() { ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr); }
+
     void ut(string tiles,string& out,set<string>&res,map<int,bool>&mp){
         for(int i=0;i<tiles.size();i++){
             if(mp[i]==0){
