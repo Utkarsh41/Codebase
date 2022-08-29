@@ -1,5 +1,6 @@
 class Solution {
 public:
+    Solution(){ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);}
     bool isAnagram(string s, string t) {
         
         int a[26]={0};
