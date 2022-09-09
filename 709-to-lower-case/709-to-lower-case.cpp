@@ -10,4 +10,11 @@ public:
         }
         return s;
     }
+    private:
+    bool upperCase(char c){
+        return (c>='A' && c<='Z');
+    }
+    bool lowerCase(char c){
+        return (c+'a'-'A');
+    }
 };
