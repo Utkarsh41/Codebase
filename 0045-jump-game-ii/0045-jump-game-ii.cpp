@@ -1,5 +1,6 @@
 class Solution {
 public:
+    Solution(){ios_base::sync_with_stdio(0);cin.tie(NULL);cout.tie(NULL);}
     int jump(vector<int>& nums) {
         
         int n=nums.size();
@@ -8,6 +9,7 @@ public:
         ut[n-1]=0;
         
         for(int i=n-2;i>=0;i--){
+            
             int res=INT_MAX;
             for(int j=i+1;j<=min(n-1,i+nums[i]);j++){
                 res=min(res,ut[j]);
