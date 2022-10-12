@@ -34,11 +34,11 @@ public:
         int res=bn;
         // Chk remaining window
         for(int i=0,j=c;j<n;i++,j++){
+            // Yha pe ws ko exclude kr rha 
             if(arr[i]>k)bn--;
-            
+            // Yha windoEnd ko include kr rha
             if(arr[j]>k)bn++;
-            
-            
+            // Answers ko niptate chalo
             res = min(res,bn);
             
         }
