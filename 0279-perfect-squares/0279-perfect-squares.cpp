@@ -53,7 +53,7 @@ public:
 };
 
 
-class Solution {
+class SolutionTabulation {
 public:
 //  Complexity n*sqrt(n)
     int numSquares(int n) {
@@ -88,3 +88,47 @@ public:
     }
 };
 
+class SolutionRec {
+public:
+//  Complexity n*sqrt(n)
+    int numSquares(int n) {
+        
+        if(n==0)return 0;
+        
+        int res=INT_MAX;
+        
+        for(int i=1;i*i<=n;i++){
+            res=min(res,1+numSquares(n-i*i));
+        }
+        return res;
+        
+
+    }
+};
+
+class Solution {
+public:
+    int solve(int n,vector<int>&dp){
+        
+        
+        if(n==0)return 0;
+        if(dp[n]!=-1)return dp[n];
+        
+        int res=INT_MAX;
+        
+        for(int i=1;i*i<=n;i++){
+            res=min(res,1+solve(n-i*i,dp));
+        }
+        return dp[n]=res;
+        
+    }
+//  Complexity n*sqrt(n)
+    int numSquares(int n) {
+        
+        vector<int>dp(n+1,-1);
+        
+        return solve(n,dp);
+        
+
+    }
+};
