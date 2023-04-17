@@ -1,4 +1,5 @@
 class Solution {
+    
 public:
     int mostFrequentEven(vector<int>& nums) {
         
@@ -28,5 +29,10 @@ public:
         }
         
         return mostFreq;
+    }
+      Solution()
+    {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
     }
 };
