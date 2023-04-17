@@ -2,7 +2,7 @@ class Solution {
 public:
     int mostFrequentEven(vector<int>& nums) {
         
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         
         int n=nums.size();
         
